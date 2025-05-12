@@ -84,7 +84,7 @@
         position: absolute;
         // padding: 10px;
         left: -70px;
-        top: 0px;
+        top: -10px;
         border-radius: 15px;
       }
       .stat-icon-2 {
@@ -110,6 +110,8 @@
     .stat-video {
       top: 18%;
       left: -30px;
+      padding: 3px 24px;
+      min-width: 200px;
     }
     .stat-online {
       top: -40px;

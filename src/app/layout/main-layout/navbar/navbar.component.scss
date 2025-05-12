@@ -1,0 +1,19 @@
+section {
+    position: fixed;
+    z-index: 9;
+    border-bottom: 1px solid #e7e7e7;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.15);
+    .count {
+        background: #FD6F00;
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        top: 5px;
+        border-radius: 50%;
+        text-align: center;
+        color: #ffff;
+    }
+    svg, a {
+        cursor: pointer;
+    }
+}
