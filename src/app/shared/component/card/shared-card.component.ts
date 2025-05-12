@@ -1,17 +1,5 @@
 import { Component, input } from '@angular/core';
-
-export interface Course {
-  price: number;
-  category: string;
-  title: string;
-  instructor: string;
-  rating: number;
-  ratingCount: number;
-  totalHours: number;
-  lectureCount: number;
-  level: string;
-  img: string;
-}
+import { CourseDto } from '../../../shared/models/course.dto';
 
 @Component({
   selector: 'app-shared-card',
@@ -21,5 +9,8 @@ export interface Course {
   styleUrl: './shared-card.component.scss'
 })
 export class SharedCardComponent {
-  course = input.required<Course>();
+
+  // public coursesData  : CourseDto;
+
+  course = input.required<CourseDto>();
 }

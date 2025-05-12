@@ -3,10 +3,13 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class CartService {
-  private cartCountSource = new BehaviorSubject<number>(0);
+  private initialCount = Number(localStorage.getItem('cartCount')) || 0;
+  private cartCountSource = new BehaviorSubject<number>(this.initialCount);
   cartCount$ = this.cartCountSource.asObservable();
 
   incrementCart() {
-    this.cartCountSource.next(this.cartCountSource.value + 1);
+    const newCount = this.cartCountSource.value + 1;
+    this.cartCountSource.next(newCount);
+    localStorage.setItem('cartCount', newCount.toString());
   }
 }

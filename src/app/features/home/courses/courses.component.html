@@ -3,15 +3,15 @@
         <h3>Top Courses</h3>
 
         <ul>
-            @for (item of routingList; track $index) {
+            @for (item of categoriesData.Categories; track $index) {
             <li>
-                <a (click)="item.onGetCourse()"> {{ item.listText }} </a>
+                <a (click)="item.onGetCourse()"> {{ item.name }} </a>
             </li>
             }
         </ul>
         <div class="courses-grid">
-            @for (course of courses; track $index) {
-            <app-shared-card [course]="course" />
+            @for (course of coursesData.Courses; track $index) {
+            <app-shared-card [course]="course" (click)="navigateToCourseDetails(course)"/>
             }
         </div>
     </div>

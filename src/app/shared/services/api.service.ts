@@ -21,6 +21,10 @@ export class ApiService {
     return this._HttpClient.get(this.baseURL + API_ENDPOINTS.GALLERY.GET);
   }
 
+  getAllCourses(): Observable<any> {
+    return this._HttpClient.get(this.baseURL + API_ENDPOINTS.COURSES.GET);
+  }
+
   getAllCategories(): Observable<any> {
     return this._HttpClient.get(this.baseURL + API_ENDPOINTS.CATEGORIES.GET);
   }

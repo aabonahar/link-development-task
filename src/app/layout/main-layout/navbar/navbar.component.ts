@@ -11,10 +11,13 @@ import { RouterModule } from '@angular/router';
 })
 export class NavbarComponent {
 
-  cartCount = 0;
+  cartCount: any;
 
   constructor(private cartService: CartService) {
+    this.cartCount = localStorage.getItem('cartCount')
     this.cartService.cartCount$.subscribe(count => {
+      console.log(count);
+      
       this.cartCount = count;
     });
   }

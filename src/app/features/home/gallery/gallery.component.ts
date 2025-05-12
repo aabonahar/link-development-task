@@ -27,43 +27,6 @@ export class GalleryComponent implements OnInit {
     })
   }
 
-  // images: GalleryItemDto[] = [
-  //   {
-  //     image: 'assets/images/01.jpg',
-  //     id: 'img-id-1',
-  //     altTitle: 'Image 1',
-  //     width: 300,
-  //     height: 200
-  //   },
-  //   {
-  //     img: 'assets/images/02.jpg',
-  //     id: 'img-id-2',
-  //     altTitle: 'Image 2',
-  //     width: 300,
-  //     height: 200
-  //   },
-  //   {
-  //     img: 'assets/images/03.jpg',
-  //     id: 'img-id-3',
-  //     altTitle: 'Image 3',
-  //     width: 300,
-  //     height: 200
-  //   },
-  //   {
-  //     img: 'assets/images/04.jpg',
-  //     id: 'img-id-4',
-  //     altTitle: 'Image 4',
-  //     width: 300,
-  //     height: 200
-  //   },
-  //   {
-  //     img: 'assets/images/05.jpg',
-  //     id: 'img-id-5',
-  //     altTitle: 'Image 5',
-  //     width: 300,
-  //     height: 200
-  //   },
-  // ];
 
   currentIndex = 2;
   autoSlideInterval: any;
