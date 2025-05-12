@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CartService } from '../../shared/services/cart.service';
 import { Router, RouterLink } from '@angular/router';
 import { CourseDto } from '../../shared/models/course.dto';
+import { LocalStorgaeService } from '../../shared/services/secure-local-storage/local-storage.service';
 
 @Component({
   selector: 'app-course-details',
@@ -15,17 +16,17 @@ export class CourseDetailsComponent {
   public cartCount: any;
   public courseDetailsData: CourseDto | any;
 
-  constructor(private cartService: CartService, private _router: Router) {
+  constructor(private cartService: CartService, private _router: Router, private _secureLocalStorage: LocalStorgaeService) {
     this.getCourseDetailsFromNavigate();
     this.trackCartCount();
   }
 
   addToCart() {
     const newItem = this.courseDetailsData;
-    const saved = localStorage.getItem("courses");
+    const saved = this._secureLocalStorage.getJsonValue("courses");
     const existingArray: { id: number; name: string }[] = saved ? JSON.parse(saved) : [];
     existingArray.push(newItem);
-    localStorage.setItem("courses", JSON.stringify(existingArray));
+    this._secureLocalStorage.setJsonValue("courses", JSON.stringify(existingArray));
     this.cartService.incrementCart();
   }
 
@@ -42,7 +43,7 @@ export class CourseDetailsComponent {
   trackCartCount() {
     this.cartService.cartCount$.subscribe(count => {
       this.cartCount = count;
-      localStorage.setItem('cartCount', this.cartCount.toString())
+      this._secureLocalStorage.setJsonValue('cartCount', this.cartCount.toString())
     });
   }
 

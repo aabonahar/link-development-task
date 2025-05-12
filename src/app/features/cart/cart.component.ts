@@ -2,6 +2,7 @@ import { CartService } from './../../shared/services/cart.service';
 import { Component, OnInit, inject, OnDestroy } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { LocalStorgaeService } from '../../shared/services/secure-local-storage/local-storage.service';
 
 @Component({
   selector: 'app-cart',
@@ -20,10 +21,13 @@ export class CartComponent implements OnInit, OnDestroy {
   public totalItems: number = 0;
 
   private _cartServices = inject(CartService);
+  private _secureLocalStorage = inject(LocalStorgaeService);
+
+  
   private subscription: Subscription = new Subscription();
 
   ngOnInit(): void {
-    const saved = localStorage.getItem('courses');
+    const saved = this._secureLocalStorage.getJsonValue('courses');
     const data: any[] = saved ? JSON.parse(saved) : [];
     this.coursesInMyCart = data;
     this.totalItems = this.coursesInMyCart.length;
@@ -52,13 +56,13 @@ export class CartComponent implements OnInit, OnDestroy {
     const updatedArray = existingArray.filter((item: any) => item.id !== id);
     this.coursesInMyCart = updatedArray;
 
-    localStorage.setItem('courses', JSON.stringify(updatedArray));
+    this._secureLocalStorage.setJsonValue('courses', JSON.stringify(updatedArray));
 
     this.calculateTotals();
 
     const newCount = this.cartCount - 1;
     this.cartCount = newCount >= 0 ? newCount : 0;
-    localStorage.setItem('cartCount', this.cartCount.toString());
+    this._secureLocalStorage.setJsonValue('cartCount', this.cartCount.toString());
   }
 
   ngOnDestroy(): void {
