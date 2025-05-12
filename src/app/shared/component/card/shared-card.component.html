@@ -1,0 +1,25 @@
+@if (course()) {
+    <div class="course-card">
+    
+        <figure>
+            <img [src]="course().img" [alt]="course().title">
+        </figure>
+    
+        <div class="price-badge">${{ course().price }}</div>
+        <div class="category">{{ course().category }}</div>
+    
+        <h4 class="title">{{ course().title }}</h4>
+        <p class="instructor">By {{ course().instructor }}</p>
+    
+        <div class="rating">
+            <span class="stars">
+                ⭐⭐⭐⭐⭐
+            </span>
+            <span class="rating-count">({{ course().ratingCount }} Ratings)</span>
+        </div>
+    
+        <div class="details">
+            {{ course().totalHours }} Total Hours, {{ course().lectureCount }} Lectures. {{ course().level }}
+        </div>
+    </div>
+    }

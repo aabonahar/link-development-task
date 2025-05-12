@@ -1,0 +1,38 @@
+<section class="hero">
+    <div class="container wrapper">
+        <div class="lc-side">
+            <h1 class="hero__title">
+                <span class="highlight">Check</span> our latest Media Gallery
+            </h1>
+            <p class="hero__subtitle">
+                Every picture holds a moment,<br>
+                every moment holds a story
+            </p>
+            <button class="btn btn-primary rounded-3" type="button">View All Photos</button>
+        </div>
+        <div class="rc-side">
+            <div class="gallery">
+                @for (image of galleryData.Slider; track image.id; let index = $index) {
+                <figure class="gallery__item" [ngStyle]="getItemStyles(index)">
+                    <img class="gallery__image" [src]="image.image" [alt]="image.altTitle" [title]="image.altTitle"
+                        [id]="image.id" [width]="image.width" [height]="image.height" loading="lazy">
+                </figure>
+                }
+            </div>
+            <div class="gallery-controls">
+                <div class="btns">
+                    <button class="ctr-btn" type="button" (click)="prev()">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </button>
+                    <button class="ctr-btn" type="button" (click)="next()">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </button>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="progress" [style.width]="getProgressWidth()"></div>
+                </div>
+                <div class="current_slide"> {{ currentIndex + 1 }} / {{ galleryData.Slider.length }} </div>
+            </div>
+        </div>
+    </div>
+</section>

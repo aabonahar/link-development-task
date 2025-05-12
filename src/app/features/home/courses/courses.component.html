@@ -1,1 +1,18 @@
-<p>courses works!</p>
+<section>
+    <div class="container">
+        <h3>Top Courses</h3>
+
+        <ul>
+            @for (item of routingList; track $index) {
+            <li>
+                <a (click)="item.onGetCourse()"> {{ item.listText }} </a>
+            </li>
+            }
+        </ul>
+        <div class="courses-grid">
+            @for (course of courses; track $index) {
+            <app-shared-card [course]="course" />
+            }
+        </div>
+    </div>
+</section>

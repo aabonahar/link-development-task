@@ -18,7 +18,7 @@ export class BannerComponent implements OnInit {
   getAllBanner() {
     this._apiServices.getAllBanner().subscribe({
       next: (data) => {
-        console.log(data);
+        // console.log(data);
         
       }
     })

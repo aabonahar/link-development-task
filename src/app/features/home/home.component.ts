@@ -2,11 +2,12 @@ import { Component, OnInit, Injectable, inject } from '@angular/core';
 import { BannerComponent } from "./banner/banner.component";
 import { GalleryComponent } from './gallery/gallery.component';
 import { ApiService } from '../../shared/services/api.service';
+import { CoursesComponent } from './courses/courses.component';
 
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [BannerComponent, GalleryComponent],
+  imports: [BannerComponent, GalleryComponent, CoursesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

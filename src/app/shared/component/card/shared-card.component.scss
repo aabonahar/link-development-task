@@ -1,0 +1,63 @@
+.course-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 16px 0;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    figure {
+        img {
+            width: 100%;
+            aspect-ratio: 2 / 1;
+            object-fit: cover;
+            border-radius: 5px
+        }
+    }
+
+    .price-badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-weight: bold;
+        font-size: 0.625rem;
+        background-color: palevioletred;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .category {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .title {
+        margin: 8px 0;
+        font-size: 1.2rem;
+    }
+
+    .instructor {
+        color: #666;
+        margin: 8px 0;
+        font-size: 0.9rem;
+    }
+
+    .rating {
+        margin: 8px 0;
+        display: flex;
+        align-items: center;
+
+        .rating-count {
+            margin-left: 8px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    }
+
+    .details {
+        color: #666;
+        font-size: 0.9rem;
+    }
+}
