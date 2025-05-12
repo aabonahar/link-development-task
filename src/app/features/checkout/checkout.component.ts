@@ -34,9 +34,9 @@ export class CheckoutComponent {
   onSubmit() {
     this.submitted = true;
     if (this.checkoutForm.invalid) {
-      this._router.navigate(['/order-complete'])
       return;
     }
+    this._router.navigate(['/order-complete'])
     // Handle successful form submission
     alert('Checkout successful!');
   }

@@ -14,21 +14,25 @@
       font-weight: 700;
       line-height: 1.1;
       margin-bottom: 24px;
+
       .bold {
         color: #111;
         font-weight: 900;
       }
+
       .highlight {
         color: #00b2ff;
         font-weight: 900;
       }
     }
+
     .banner-subtext {
       color: #6c757d;
       font-size: 1.1rem;
       margin-bottom: 32px;
       max-width: 500px;
     }
+
     .btn-primary {
       background: #00b2ff;
       border: none;
@@ -37,29 +41,38 @@
       padding: 14px 36px;
       border-radius: 10px;
       transition: background 0.2s;
+
       &:hover {
         background: #0090cc;
       }
     }
+
   }
 
   .banner-image-wrapper {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+
     .banner-image-bg {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 380px;
-      height: 380px;
+      width: 400px;
+      height: 400px;
       background: #00b2ff;
       border-radius: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
       opacity: 0.9;
     }
+
     .banner-student {
       position: relative;
       z-index: 2;
@@ -68,6 +81,7 @@
       // box-shadow: 0 8px 32px rgba(0, 178, 255, 0.15);
       background: #00b2ff;
     }
+
     .stat {
       position: absolute;
       background: #fff;
@@ -79,6 +93,7 @@
       z-index: 3;
       border: #00b2ff 1px solid;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
       .stat-icon-1 {
         // background:#00b2ff;
         position: absolute;
@@ -87,6 +102,7 @@
         top: -10px;
         border-radius: 15px;
       }
+
       .stat-icon-2 {
         padding: 15px;
         border-radius: 10px;
@@ -95,43 +111,56 @@
         // border: #00b2ff 1px solid;
         // box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
       }
+
       .stat-info {
         .stat-value {
           font-size: 1.3rem;
           font-weight: 700;
           color: #111;
         }
+
         .stat-label {
           font-size: 0.95rem;
           color: #6c757d;
         }
       }
     }
+
     .stat-video {
       top: 18%;
       left: -30px;
       padding: 3px 24px;
       min-width: 200px;
     }
+
     .stat-online {
       top: -40px;
       right: 0;
       flex-direction: column;
       align-items: center;
-      padding: 50px 15px;
+      padding: 15px;
       border: #00b2ff 1px solid;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
       .stat-progress {
+        width: fit-content;
         margin-bottom: 8px;
+        margin-inline: auto;
       }
+
       .stat-info {
         align-items: center;
         text-align: center;
       }
     }
+
     .stat-tutors {
       bottom: 10%;
       right: -30px;
+    }
+
+    img {
+      height: 500px;
     }
   }
 
@@ -140,29 +169,35 @@
     .banner-content h1 {
       font-size: 2.2rem;
     }
+
     .banner-image-wrapper .banner-image-bg {
       width: 260px;
       height: 260px;
     }
   }
+
   @media (max-width: 767px) {
     padding: 30px 0;
+
     .banner-content h1 {
-      font-size: 1.5rem;
+      margin-top: 10rem;
+      font-size: 2rem;
     }
+
     .banner-image-wrapper {
-      .banner-image-bg {
-        width: 180px;
-        height: 180px;
-      }
       .stat {
         min-width: 100px;
         padding: 8px 12px;
+
         .stat-info .stat-value {
           font-size: 1rem;
         }
       }
     }
+  }
+
+  img {
+    height: 400px !important;
   }
 }
 
@@ -170,6 +205,7 @@
   position: absolute;
   top: -50px;
 }
+
 .bg-circel-pattern-2 {
   position: absolute;
   right: -100px;
@@ -177,13 +213,35 @@
 }
 
 .border-div {
-  width: 500px;
+  width: 400px;
   border: 1px #00b2ff solid;
-  height: 500px;
-  position: absolute;
+  height: 400px;
+  position: relative;
   border-radius: 50%;
   right: 50px;
   bottom: 20px;
+
+  @media (max-width: 1000px) {
+    width: 400px;
+    border: 1px #00b2ff solid;
+    height: 400px;
+    position: relative;
+    border-radius: 50%;
+    left: 50%;
+    bottom: -250px;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 991px) {
+    width: 400px;
+    border: 1px #00b2ff solid;
+    height: 400px;
+    position: relative;
+    border-radius: 50%;
+    left: 50%;
+    bottom: -210px;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .circel-one {
@@ -194,13 +252,14 @@
   border-radius: 50%;
   bottom: 35px;
 }
+
 .circel-two {
   position: absolute;
   height: 25px;
   width: 25px;
   background: #00b2ff;
   border-radius: 50%;
-  left:-100px;
+  left: -100px;
 }
 
 
