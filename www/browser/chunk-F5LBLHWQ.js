@@ -1,0 +1,1 @@
+import{La as t,bb as o,cb as i,kb as a}from"./chunk-O7H63XKT.js";var p=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=t({type:n,selectors:[["app-login"]],decls:2,vars:0,template:function(e,m){e&1&&(o(0,"p"),a(1,"login works!"),i())},encapsulation:2})};export{p as LoginComponent};

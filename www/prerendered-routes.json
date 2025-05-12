@@ -1,0 +1,12 @@
+{
+  "routes": {
+    "/": {},
+    "/cart": {},
+    "/checkout": {},
+    "/course-details": {},
+    "/login": {},
+    "/order-complete": {},
+    "/order-faild": {},
+    "/signup": {}
+  }
+}

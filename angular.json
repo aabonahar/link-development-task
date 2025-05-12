@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/link-dev-task",
+            "outputPath": "www",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -50,12 +50,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
                 }
               ],
               "outputHashing": "all"
