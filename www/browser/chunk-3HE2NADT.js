@@ -1,1 +1,0 @@
-import{La as t,bb as o,cb as p,kb as i}from"./chunk-O7H63XKT.js";var s=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=t({type:n,selectors:[["app-sing-up"]],decls:2,vars:0,template:function(e,m){e&1&&(o(0,"p"),i(1,"sing-up works!"),p())},encapsulation:2})};export{s as SingUpComponent};
